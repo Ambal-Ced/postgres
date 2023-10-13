@@ -1,0 +1,15 @@
+select Orders.Order_Id, Customers.company_Name, Orders.Order_Date, Products.product_name
+From Orders  
+inner join Customers On Orders.Customer_ID=Customers.Customer_ID 
+inner join Products on Orders.Customer_ID=Customers.Customer_ID
+where company_Name ='Rancho grande'  order by Orders.Order_Date ASC Limit (1);
+
+
+SELECT Employees.last_name, Employees.first_name, Employees.employee_ID, Customers.customer_ID,
+Orders.Order_Date
+FROM Employees
+INNER JOIN Customers ON Customers.customer_ID = Customers.customer_ID
+inner join Orders on Customers.customer_ID = Customers.customer_ID
+where Orders.order_date >= '1997-01-01' and  Orders.order_date <= '1998-12-31'
+order by Orders.order_date ASC
+;
